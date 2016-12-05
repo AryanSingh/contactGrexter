@@ -6,78 +6,78 @@
     <div class="panel">
       <h3>{{name}}</h3>
       <ul>
-        <li><strong>Company</strong>: {{company}}</li>
-        <li><strong>Email Address</strong>: {{email}}</li>
-        <h5>Phones Numbers</h5>
-        <li><strong>Work</strong>: {{work_phone}}</li>
-        <li><strong>Home</strong>: {{home_phone}}</li>
-        <li><strong>Mobile</strong>: {{mobile_phone}}</li>
-        <h5>Location Info</h5>
-        <li>{{street_address}}</li>
-        <li>{{city}}, {{state}}, {{zipcode}}</li>
+        <li><strong>Email</strong>: {{email}}</li>
+        <li><strong>Message</strong>: {{message}}</li>
+				<li><strong>Duration of stay</strong>: {{duration_of_stay}}</li>
+        <li><strong>Phone Number</strong>: {{phone}}</li>
+        <li><strong>Property Link</strong>: {{property_link}}</li>
+        <li><strong>Rent without furniture</strong>: {{rent_without_furniture}}</li>
+				<li><strong>Security Deposit Months</strong>: {{security_deposit_months}}</li>
+				<li><strong>Visit Date:</strong>{{date}}</li>
+				<li><strong>Visit time:</strong>{{time}}</li>
       </ul>
     </div>
   </div>
 <form ng-submit="addFormSubmit()" ng-show="addFormShow">
-  		<h3>Add Contact</h3>
+  		<h3>Add Lead</h3>
   		<!-- Add Form -->
   		<div class="row">
-		    <div class="large-6 columns">
+		    <div class="large-12 columns">
 		      <label>Name:
 		        <input type="text" ng-model="name" placeholder="Contact Name" required />
 		      </label>
 		    </div>
-		    <div class="large-6 columns">
+		    <div class="large-12 columns">
 		      <label>Email:
 		        <input type="text" ng-model="email" placeholder="Contact Email" required />
 		      </label>
 		    </div>
 		 </div>
 		 <div class="row">
-		    <div class="large-6 columns">
-		      <label>Company:
-		        <input type="text" ng-model="company" placeholder="Company Name" />
+		    <div class="large-12 columns">
+		      <label>Message:
+		        <input type="text" ng-model="message" placeholder="Message" />
 		      </label>
 		    </div>
-		    <div class="large-6 columns">
-		      <label>Work Phone:
-		        <input type="text" ng-model="work_phone" placeholder="Work Phone" />
-		      </label>
-		    </div>
-		 </div>
-		 <div class="row">
-		    <div class="large-6 columns">
-		      <label>Mobile Phone:
-		        <input type="text" ng-model="mobile_phone" placeholder="Mobile Phone" />
-		      </label>
-		    </div>
-		    <div class="large-6 columns">
-		      <label>Home Phone:
-		        <input type="text" ng-model="home_phone" placeholder="Home Phone" />
+		    <div class="large-12 columns">
+		      <label>Phone:
+		        <input type="text" ng-model="phone" placeholder="Phone" />
 		      </label>
 		    </div>
 		 </div>
 		 <div class="row">
-		    <div class="large-6 columns">
-		      <label>Street Address:
-		        <input type="text" ng-model="street_address" placeholder="Street Address" />
+		    <div class="large-12 columns">
+		      <label>Property_link:
+		        <input type="text" ng-model="property_link" placeholder="Property Link" />
 		      </label>
 		    </div>
-		    <div class="large-6 columns">
-		      <label>City:
-		        <input type="text" ng-model="city" placeholder="City" />
+		    <div class="large-12 columns">
+		      <label>Rent Without Furniture:
+		        <input type="text" ng-model="rent_without_furniture" placeholder="Rent Without Furniture" />
 		      </label>
 		    </div>
 		 </div>
 		 <div class="row">
-		    <div class="large-6 columns">
-		      <label>State:
-		        <input type="text" ng-model="state" placeholder="State" />
+		    <div class="large-12 columns">
+		      <label>Securtiy Deposit:
+		        <input type="text" ng-model="security_deposit_months" placeholder="Security Deoposit Months" />
 		      </label>
 		    </div>
-		    <div class="large-6 columns">
-		      <label>Zip Code:
-		        <input type="text" ng-model="zipcode" placeholder="Zip Code" />
+		    <div class="large-12 columns">
+		      <label>Date:
+		        <input type="text" ng-model="date" placeholder="date" />
+		      </label>
+		    </div>
+		 </div>
+		 <div class="row">
+		    <div class="large-12 columns">
+		      <label>time:
+		        <input type="text" ng-model="time" placeholder="time" />
+		      </label>
+		    </div>
+		    <div class="large-12 columns">
+		      <label>Acquired Through:
+		        <input type="text" ng-model="acquired_through" placeholder="" />
 		      </label>
 		    </div>
 		 </div>
@@ -93,62 +93,69 @@
   		<div class="row">
 		    <div class="large-6 columns">
 		      <label>Name:
-		        <input type="text" ng-model="name" placeholder="Contact Name" required />
+		        <input type="text" ng-model="name" placeholder="Name" required />
 		      </label>
 		    </div>
 		    <div class="large-6 columns">
 		      <label>Email:
-		        <input type="text" ng-model="email" placeholder="Contact Email" required />
+		        <input type="text" ng-model="email" placeholder="Email" required />
 		      </label>
 		    </div>
 		 </div>
 		 <div class="row">
 		    <div class="large-6 columns">
-		      <label>Company:
-		        <input type="text" ng-model="company" placeholder="Company Name" />
+		      <label>Message:
+		        <input type="text" ng-model="message" placeholder="Message" />
 		      </label>
 		    </div>
 		    <div class="large-6 columns">
-		      <label>Work Phone:
-		        <input type="text" ng-model="work_phone" placeholder="Work Phone" />
+		      <label>Phone:
+		        <input type="text" ng-model="phone" placeholder="Phone" />
 		      </label>
 		    </div>
 		 </div>
 		 <div class="row">
 		    <div class="large-6 columns">
-		      <label>Mobile Phone:
-		        <input type="text" ng-model="mobile_phone" placeholder="Mobile Phone" />
+		      <label>Property Links:
+		        <input type="text" ng-model="property_link" placeholder="property_link" />
 		      </label>
 		    </div>
 		    <div class="large-6 columns">
-		      <label>Home Phone:
-		        <input type="text" ng-model="home_phone" placeholder="Home Phone" />
+		      <label>Rent Without Furniture:
+		        <input type="text" ng-model="rent_without_furniture" placeholder="rent_without_furniture" />
 		      </label>
 		    </div>
 		 </div>
 		 <div class="row">
 		    <div class="large-6 columns">
-		      <label>Street Address:
-		        <input type="text" ng-model="street_address" placeholder="Street Address" />
+		      <label>Security Deposit Months
+		        <input type="text" ng-model="security_deposit_months" placeholder="Security Deposit Months" />
 		      </label>
 		    </div>
 		    <div class="large-6 columns">
-		      <label>City:
-		        <input type="text" ng-model="city" placeholder="City" />
+		      <label>Date:
+		        <input type="text" ng-model="date" placeholder="Date" />
 		      </label>
 		    </div>
 		 </div>
 		 <div class="row">
 		    <div class="large-6 columns">
-		      <label>State:
-		        <input type="text" ng-model="state" placeholder="State" />
+		      <label>Time:
+		        <input type="text" ng-model="time" placeholder="time" />
 		      </label>
 		    </div>
-		    <div class="large-6 columns">
-		      <label>Zip Code:
-		        <input type="text" ng-model="zipcode" placeholder="Zip Code" />
+				<div class="large-6 columns">
+		      <label>Acquired Through:
+		        <input type="text" ng-model="acquired_through" placeholder="Website" />
 		      </label>
 		    </div>
+		 </div>
+		 <div class="row">
+			 <div class="large-6 columns">
+				 <label>Resolved:
+					 <input type="text" ng-model="resolved" placeholder="Not Resolved" />
+				 </label>
+			 </div>
 		 </div>
 		 <div class="row">
 		    <div class="large-12 columns">
@@ -157,12 +164,13 @@
 		 </div>
 </form>
 
-	<h3>Your Contacts ({{contacts.length}})</h3>
+	<h3>Your Leads ({{contacts.length}})</h3>
   <table>
 	  <thead>
 	    <tr>
 	      <th width="200px">Name</th>
-	      <th width="200px;">Company</th>
+	      <th width="200px;">Acquired Through</th>
+				<th width="200px;">Status</th>
 	      <th width="25%;">Email</th>
 	      <th width="25%;">Actions</th>
 	    </tr>
@@ -170,10 +178,11 @@
 	  <tbody>
 	    <tr ng-repeat ="contact in contacts">
 	      <td><a ng-click="showContact(contact)">{{contact.name}}</a></td>
-	      <td>{{contact.company}}</td>
+	      <td>{{contact.acquired_through}}</td>
+				<td>{{contact.resolved}}</td>
 	      <td>{{contact.email}}</td>
 	      <td><a class="button tiny" ng-click="showEditForm(contact)">Edit</a>
-	      	<a class="button tiny alert" ng-click="removeContact(contact)">Delete</a></td>
+	      	<a class="button tiny alert" ng-click="removeContact(contact)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
 	    </tr>
 	  </tbody>
 	</table>

@@ -20,14 +20,15 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
     $scope.id			    = contact.$id;
 		$scope.name 			= contact.name;
 		$scope.email 			= contact.email;
-		$scope.company 			= contact.company;
-		$scope.work_phone 		= contact.phones[0].work;
-		$scope.home_phone 		= contact.phones[0].home;
-		$scope.mobile_phone 	= contact.phones[0].mobile;
-		$scope.street_address 	= contact.address[0].street_address;
-		$scope.city 			= contact.address[0].city;
-		$scope.state 			= contact.address[0].state;
-		$scope.zipcode 			= contact.address[0].zipcode;
+		$scope.message 			= contact.message;
+		$scope.phone 		= contact.phone;
+    $scope.duration_of_stay = contact.duration_of_stay;
+		$scope.property_link 		= contact.property_link;
+		$scope.rent_without_furniture 	= contact.rent_without_furniture;
+		$scope.security_deposit_months 	= contact.security_deposit_months;
+		$scope.date 			= contact.date;
+		$scope.time 			= contact.time;
+    $scope.acquired_through   = contact.acquired_through;
   }
   $scope.hide = function(){
     $scope.addFormShow = false;
@@ -37,34 +38,30 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
     console.log('submitted');
     if($scope.name){ var name = $scope.name; } else { var name = null; }
 		if($scope.email){ var email = $scope.email; } else { var email = null; }
-		if($scope.company){ var company = $scope.company; } else { var company = null; }
-		if($scope.mobile_phone){ var mobile_phone = $scope.mobile_phone; } else { var mobile_phone = null; }
-		if($scope.home_phone){ var home_phone = $scope.home_phone; } else { var home_phone = null; }
-		if($scope.work_phone){ var work_phone = $scope.work_phone; } else { var work_phone = null; }
-		if($scope.street_address){ var street_address = $scope.street_address; } else { var street_address = null; }
-		if($scope.city){ var city = $scope.city; } else { var city = null; }
-		if($scope.state){ var state = $scope.state; } else { var state = null; }
-		if($scope.zipcode){ var zipcode = $scope.zipcode; } else { var zipcode = null; }
+		if($scope.message){ var message = $scope.message; } else { var message = null; }
+    if($scope.duration_of_stay){ var duration_of_stay = $scope.duration_of_stay;} else { var duration_of_stay = null};
+		if($scope.phone){ var phone = $scope.phone; } else { var phone = null; }
+		if($scope.property_link){ var property_link = $scope.property_link; } else { var property_link = null; }
+		if($scope.rent_without_furniture){ var rent_without_furniture = $scope.rent_without_furniture; } else { var rent_without_furniture = null; }
+		if($scope.security_deposit_months){ var security_deposit_months = $scope.security_deposit_months; } else { var security_deposit_months = null; }
+		if($scope.date){ var date = $scope.date; } else { var date = null; }
+		if($scope.time){ var time = $scope.time; } else { var time = null; }
+    if($scope.acquiredThrough){ var acquired_through = $scope.acquiredThrough;} else { var acquired_through = "Website"; }
+    if($scope.resolved){ var resolved = $scope.resolved;} else { var resolved = "Not Resolved"};
 
     $scope.contacts.$add({
       name:name,
       email:email,
-      company:company,
-      phones:[
-        {
-          mobile:mobile_phone,
-          home:home_phone,
-          work:work_phone
-        }
-      ],
-      address:[
-        {
-          street_address:street_address,
-          city:city,
-          state:state,
-          zipcode:zipcode
-        }
-      ]
+      message: message,
+      duration_of_stay: duration_of_stay,
+      phone:phone,
+      property_link: property_link,
+      rent_without_furniture: rent_without_furniture,
+      security_deposit_months: security_deposit_months,
+      date: date,
+      time:time,
+      acquired_through:acquired_through,
+      resolved:resolved
     }).then(function(ref){
       var id = ref.key;
       console.log("added contact with id:" + id);
@@ -80,14 +77,16 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
     var record = $scope.contacts.$getRecord(id);
     record.name 						= $scope.name;
 		record.email 						= $scope.email;
-		record.company 						= $scope.company;
-		record.phones[0].work 				= $scope.work_phone;
-		record.phones[0].home 				= $scope.home_phone;
-		record.phones[0].mobile 			= $scope.mobile_phone;
-		record.address[0].street_address 	= $scope.street_address;
-		record.address[0].city 				= $scope.city;
-		record.address[0].state 			= $scope.state;
-		record.address[0].zipcode 			= $scope.zipcode;
+		record.message 						= $scope.message;
+		record.duration_of_stay  = $scope.duration_of_stay;
+    record.phone             = $scope.phone;
+    record.property_link      = $scope.property_link;
+    record.rent_without_furniture = $scope.rent_without_furniture;
+    record.security_deposit_months = $scope.security_deposit_months;
+    record.date                    = $scope.date;
+    record.time                   = $scope.time;
+    record.acquired_through       = $scope.acquired_through;
+    record.resolved               = $scope.resolved;
 
     $scope.contacts.$save(record).then(function(ref){
       // console.log(ref.key);
@@ -100,15 +99,16 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
     // console.log("gettin contact ...");
     $scope.name = contact.name;
     $scope.email = contact.email;
-    $scope.company = contact.company;
-    $scope.work_phone = contact.phones[0].work;
-    $scope.home_phone = contact.phones[0].home;
-    $scope.mobile_phone = contact.phones[0].mobile;
-    $scope.street_address = contact.address[0].street_address;
-    $scope.city = contact.address[0].city;
-    $scope.state = contact.address[0].state;
-    $scope.zipcode = contact.address[0].zipcode;
-
+    $scope.message = contact.message;
+    $scope.duration_of_stay = contact.duration_of_stay;
+    $scope.phone = contact.phone;
+    $scope.property_link = contact.property_link;
+    $scope.rent_without_furniture = contact.rent_without_furniture;
+    $scope.security_deposit_months = contact.security_deposit_months;
+    $scope.date = contact.date;
+    $scope.time = contact.time;
+    $scope.acquired_through = contact.acquired_through;
+    $scope.resolved = contact.resolved;
     $scope.contactShow = true;
   }
   $scope.removeContact = function(contact){
@@ -121,13 +121,15 @@ angular.module('myContacts.contacts', ['ngRoute','firebase'])
 
 		$scope.name = '';
 		$scope.email = '';
-		$scope.company = '';
-		$scope.mobile_phone = '';
-		$scope.home_phone = '';
-		$scope.work_phone = '';
-		$scope.street_address = '';
-		$scope.city = '';
-		$scope.state = '';
-		$scope.zipcode = '';
+		$scope.message = '';
+    $scope.duration_of_stay = '';
+		$scope.phone = '';
+    $scope.property_link = '';
+    $scope.rent_without_furniture = '';
+		$scope.security_deposit_months = '';
+    $scope.date = '';
+    $scope.time = '';
+    $scope.acquired_through = '';
+    $scope.resolved = '';
 	}
 }]);
