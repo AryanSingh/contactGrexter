@@ -22,7 +22,7 @@
     "firebase":"*"
   },
   "scripts": {
-    "postinstall": "bower cache clean && bower install",
+  
 
     "prestart": "npm install",
     "start": "node server.js"
