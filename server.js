@@ -12,7 +12,7 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components')); 
 
                                       // log with Morgan
 app.get('*', (req, res) => {
-	res.send('index.html');
+	res.send('/public/index.html');
 });
 
 // Listen
